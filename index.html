@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exo-Cog Unifié</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Exo-Cog – Version Unifiée</h1>
+
+  <div class="container">
+
+    <!-- Stack 1 : Input & Gestion Tâches -->
+    <div class="stack stack1">
+      <h2>Gestion des tâches</h2>
+      <input type="text" id="taskInput" placeholder="Nouvelle tâche…">
+      <button id="addBtn">Ajouter</button>
+      <div class="buttons-row"></div>
+      <ul id="tasksContainer"></ul>
+
+      <h3>Prompts LLM</h3>
+      <select id="llmSelect">
+        <option value="https://chat.openai.com/">ChatGPT</option>
+        <option value="https://bison.ai/">Mistral / Bison</option>
+      </select>
+      <div id="promptsContainer"></div>
+      <p id="copiedMsg" style="display:none;color:green;">✅ Prompt copié !</p>
+
+      <button id="pasteDownloadBtn">Coller JSON & Télécharger</button>
+      <input type="file" id="uploadJson" accept=".json">
+    </div>
+
+    <!-- Stack 2 : Modules / Traitement -->
+    <div class="stack stack2">
+      <h2>Modules / Vue structurée</h2>
+
+      <div class="module" id="jalonsModule">
+        <h3>Jalons & Sous-actions</h3>
+        <ul id="jalonsList"></ul>
+      </div>
+
+      <div class="module" id="messagesModule">
+        <h3>Messages / Emails</h3>
+        <table>
+          <thead>
+            <tr><th>✓</th><th>Destinataire</th><th>Sujet</th><th>Texte</th></tr>
+          </thead>
+          <tbody id="messagesList"></tbody>
+        </table>
+      </div>
+
+      <div class="module" id="rdvModule">
+        <h3>Rendez-vous / Créneaux</h3>
+        <ul id="rdvList"></ul>
+      </div>
+
+      <div class="module" id="livrablesModule">
+        <h3>Livrables à préparer</h3>
+        <ul id="livrablesList"></ul>
+      </div>
+    </div>
+
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
